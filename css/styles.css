@@ -1,0 +1,355 @@
+/** -------------------- Global -------------------- */
+:root{
+    --Primary: #56aeff;
+    --Secundary: #d9fffd;
+    --White: #ffffff;
+    --Black: #838383;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(npi.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    
+}
+
+/** -------------------- Header -------------------- */
+header{
+    background-color: var(--Primary);
+    padding: 10px 80px;
+    align-content: center;
+}
+
+.containerHeader{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.logo{
+    color: var(--White);
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.logoBold{
+    font-weight: 700;
+}
+
+.containerHeaderNav{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navegacionEnlace{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: var(--White);
+}
+
+header img{
+    width: 40px;
+}
+
+@media(min-width: 768px){
+    header{
+        position: sticky;
+        top: 0;
+    }
+
+    .containerHeader{
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .navegacion{
+        display: flex;
+        gap: 2rem;
+    }
+
+    .containerHeaderNav{
+        flex-direction: row;
+        gap: 0;
+    }
+}
+
+/** -------------------- Month -------------------- */
+.month{
+    height: 60px;
+    padding: 0 80px;
+    align-content: center;
+}
+
+.containerMonth{
+    display: flex;
+    justify-content: end;
+}
+
+.month h4{
+    font-size: 30px;
+}
+
+/** -------------------- Main -------------------- */
+
+main{
+    padding: 0 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerMain{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+main h2{
+    font-size: 40px;
+    text-align: center;
+}
+
+/** -------------------- Agenda -------------------- */
+
+.agenda{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dayAgenda{
+    background-color: var(--White);
+    padding: 15px 20px 20px 20px;
+    margin: 10px;
+    width: 70%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--Black);
+    border-radius: 10%;
+    box-sizing: border-box;
+    box-shadow: -12px 12px 0px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: -12px 12px 0px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: -12px 12px 0px 0px rgba(0,0,0,0.5);
+}
+
+.day{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.appointments{
+    width: 100%;
+    border-bottom: 1px solid var(--Black);
+    margin-bottom: 5px;
+}
+
+.appointments:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+
+.hour{
+    text-align: left;
+}
+
+.name{
+    text-align: right;
+}
+
+@media(min-width: 768px){
+    .dayAgenda{
+        width: calc(50% - 20px);
+    }
+}
+
+@media(min-width: 1160px){
+    .dayAgenda{
+        width: calc(25% - 20px);
+    }
+}
+
+@media(min-width: 1440px){
+    .dayAgenda{
+        width: calc(15% - 20px);
+    }
+}
+
+/** -------------------- Buttons -------------------- */
+.buttons{
+    padding: 0 80px;
+    margin: 40px;
+}
+
+.containerButtons{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.buttonP{
+    width: 50%;
+    height: 100px;
+    background-color: var(--Secundary);
+    border: 1px solid var(--Black);
+    border-radius: 20px;
+    text-align: center;
+    align-content: center;
+    text-decoration: none;
+    color: var(--Black);
+}
+
+@media(min-width: 768px){
+    .containerButtons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/** -------------------- Alumnos -------------------- */
+.mainAlumnos{
+    margin-top: 20px;
+    padding: 0 40px;
+}
+
+.containerAlumnos{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.alumno{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.alumnoC{
+    background-color: var(--White);
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--Black);
+    border-radius: 25%;
+    box-shadow: -4px 4px 0px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: -4px 4px 0px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: -4px 4px 0px 0px rgba(0,0,0,0.5);
+}
+
+.alumnoC2{
+    text-align: center;
+    font-weight: 700;
+}
+
+.alumnoExp{
+    width: 20%;
+}
+
+.alumnoNombre{
+    width: 70%;
+}
+
+.alumnoSecciones{
+    width: 5%;
+    display: none;
+}
+
+.alumnoFaltas{
+    width: 5%;
+    display: none;
+}
+
+.alumnoUSeccion{
+    width: 15%;
+    display: none;
+}
+
+.alumnoPSeccion{
+    width: 15%;
+    display: none;
+}
+
+@media(min-width: 768px){
+    .mainAlumnos{
+        padding: 0 80px;
+    }
+
+    .alumnoNombre{
+        width: 30%;
+    }
+
+    .alumnoSecciones{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .alumnoFaltas{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .alumnoUSeccion{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .alumnoPSeccion{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/** -------------------- Footer -------------------- */
+.containerFooter{
+    padding: 20px 80px;
+    display: flex;
+    justify-content: center;
+}
+
+cursor{
+    position: fixed;
+    top: calc(var(--cursor-size)*-0.5);
+    left: calc(var(--cursor-size)*-0.5);
+    mix-blend-mode: difference;
+    filter: url(#goo);
+}
+
+.cursor-circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    border-radius: var(--cursor-size);
+    transform-origin: center center;
+}
