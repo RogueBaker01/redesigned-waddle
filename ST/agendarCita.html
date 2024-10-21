@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container containerHeader">
+            <a href="index.html" class="logo"><h1>SuSalud<samp class="logoBold">Troyana</samp></h1></a>
+            <div class="container containerHeaderNav">
+                <nav class="container navegacion">
+                    <a href="agendarCita.html" class="navegacionEnlace">Agendar Cita</a>
+                    <a href="#" class="navegacionEnlace">Mis Datos</a>
+                </nav>
+                <img src="img/logo.jpg" alt="">
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="container containerCitas">
+            <h1 class="citasTitulo">Psicología</h1>
+            <div class="cita">
+                <p class="citaFecha">Npi</p>
+                <p class="citaInfo">Nombre psicólogo</p>
+                <button class="agendarCitaBoton" data-servicio="Psicología">Agendar</button>
+            </div>
+            <h1 class="citasTitulo">Nutrición</h1>
+            <div class="cita">
+                <p class="citaFecha">Npi</p>
+                <p class="citaInfo">Nombre nutricionista</p>
+                <button class="agendarCitaBoton" data-servicio="Nutrición">Agendar</button>
+            </div>
+            <h1 class="citasTitulo">Fisio</h1>
+            <div class="cita">
+                <p class="citaFecha">Npi</p>
+                <p class="citaInfo">Nombre fisioterapeuta</p>
+                <button class="agendarCitaBoton" data-servicio="Fisio">Agendar</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Agendar Cita</h2>
+            </div>
+            <div class="modal-body">
+                <label for="daySelector">Seleccione un día:</label>
+                <select id="daySelector">
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miércoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sábado">Sábado</option>
+                </select>
+
+                <label for="timeSelector">Seleccione una hora:</label>
+                <select id="timeSelector">
+                    <option value="10:00">10:00</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="15:00">15:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button class="aceptar">Aceptar</button>
+                <button class="cancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container containerFooter">
+            <h4>No se, algo</h4>
+        </div>
+    </footer>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var modalTitle = document.getElementById("modalTitle");
+        var span = document.getElementsByClassName("close")[0];
+
+        var botones = document.querySelectorAll('.agendarCitaBoton');
+
+        botones.forEach(function(boton) {
+            boton.onclick = function() {
+                var servicio = this.getAttribute('data-servicio');
+                modalTitle.textContent = 'Agendar cita en: ' + servicio;
+                modal.style.display = "block";
+            };
+        });
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.querySelector('.aceptar').onclick = function() {
+            let selectedDay = document.getElementById('daySelector').value;
+            let selectedTime = document.getElementById('timeSelector').value;
+            alert('Cita agendada para el ' + selectedDay + ' a las ' + selectedTime);
+            modal.style.display = "none";
+        };
+
+        document.querySelector('.cancelar').onclick = function() {
+            modal.style.display = "none";
+        };
+    </script>
+</body>
+</html>
