@@ -23,7 +23,7 @@
 
     <section class="month">
         <div class="container containerMonth">
-            <h4>Mes</h4>
+            <h4 id="month-name">Mes</h4>
         </div>
     </section>
 
@@ -34,7 +34,7 @@
                 <div class="container dayAgenda">
                     <div class="day">
                         <h3>Lunes</h3>
-                        <h4>1</h4>
+                        <h3 id="lunes">1</h3>
                     </div>
                     <div class="appointments">
                         <p class="hour">10:00-</p>
@@ -72,15 +72,7 @@
                 <div class="container dayAgenda">
                     <div class="day">
                         <h3>Martes</h3>
-                        <h4>1</h4>
-                    </div>
-                    <div class="appointments">
-                        <p class="hour">10:00-</p>
-                        <p class="name">Nombre</p>
-                    </div>
-                    <div class="appointments">
-                        <p class="hour">11:00-</p>
-                        <p class="name">Nombre</p>
+                        <h3 id="martes">1</h3>
                     </div>
                     <div class="appointments">
                         <p class="hour">12:00-</p>
@@ -109,16 +101,8 @@
                 </div>
                 <div class="container dayAgenda">
                     <div class="day">
-                        <h3>Miercoles</h3>
-                        <h4>1</h4>
-                    </div>
-                    <div class="appointments">
-                        <p class="hour">10:00-</p>
-                        <p class="name">Nombre</p>
-                    </div>
-                    <div class="appointments">
-                        <p class="hour">11:00-</p>
-                        <p class="name">Nombre</p>
+                        <h3>Miércoles</h3>
+                        <h3 id="miercoles">1</h3>
                     </div>
                     <div class="appointments">
                         <p class="hour">12:00-</p>
@@ -148,15 +132,7 @@
                 <div class="container dayAgenda">
                     <div class="day">
                         <h3>Jueves</h3>
-                        <h4>1</h4>
-                    </div>
-                    <div class="appointments">
-                        <p class="hour">10:00-</p>
-                        <p class="name">Nombre</p>
-                    </div>
-                    <div class="appointments">
-                        <p class="hour">11:00-</p>
-                        <p class="name">Nombre</p>
+                        <h3 id="jueves">1</h3>
                     </div>
                     <div class="appointments">
                         <p class="hour">12:00-</p>
@@ -186,15 +162,7 @@
                 <div class="container dayAgenda">
                     <div class="day">
                         <h3>Viernes</h3>
-                        <h4>1</h4>
-                    </div>
-                    <div class="appointments">
-                        <p class="hour">10:00-</p>
-                        <p class="name">Nombre</p>
-                    </div>
-                    <div class="appointments">
-                        <p class="hour">11:00-</p>
-                        <p class="name">Nombre</p>
+                        <h3 id="viernes">1</h3>
                     </div>
                     <div class="appointments">
                         <p class="hour">12:00-</p>
@@ -223,16 +191,8 @@
                 </div>
                 <div class="container dayAgenda">
                     <div class="day">
-                        <h3>Sabado</h3>
-                        <h4>1</h4>
-                    </div>
-                    <div class="appointments">
-                        <p class="hour">10:00-</p>
-                        <p class="name">Nombre</p>
-                    </div>
-                    <div class="appointments">
-                        <p class="hour">11:00-</p>
-                        <p class="name">Nombre</p>
+                        <h3>Sábado</h3>
+                        <h3 id="sabado">1</h3>
                     </div>
                     <div class="appointments">
                         <p class="hour">12:00-</p>
@@ -268,5 +228,29 @@
             <h4>No se, algo</h4>
         </div>
     </footer>
+
+    <script>
+        const today = new Date();
+        const mesesNombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        const mesActual = mesesNombres[today.getMonth()];
+    
+        document.getElementById('month-name').textContent = mesActual;
+
+        const diaActual = today.getDate();
+        const diaActualDeLaSemana = today.getDay();
+
+        function getdiaDeLaSemana(diaDeLaSemana) {
+            const diff = diaDeLaSemana - diaActualDeLaSemana;
+            return new Date(today.setDate(diaActual + diff)).getDate();
+        }
+
+        document.getElementById('lunes').textContent = getdiaDeLaSemana(1);
+        document.getElementById('martes').textContent = getdiaDeLaSemana(2);
+        document.getElementById('miercoles').textContent = getdiaDeLaSemana(3);
+        document.getElementById('jueves').textContent = getdiaDeLaSemana(4);
+        document.getElementById('viernes').textContent = getdiaDeLaSemana(5);
+        document.getElementById('sabado').textContent = getdiaDeLaSemana(6);
+    </script>
+
 </body>
 </html>
