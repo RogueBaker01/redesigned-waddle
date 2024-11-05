@@ -38,11 +38,15 @@
                     </div>
                     <div class="appointments">
                         <p class="hour">10:00-</p>
-                        <p class="name">Adrián García López Npi Npi Npi Npi</p>
+                        <p id="325732" class="name" data-nombre="Adrián García López" data-expediente="325732" data-carrera="Ingeniería de Software" data-asistencias="3" data-faltas="0" data-ultima="01/01/2024" data-proxima="01/01/2024">
+                            Adrián García López npi
+                        </p>
                     </div>
                     <div class="appointments">
                         <p class="hour">11:00-</p>
-                        <p class="name">Adrián García López</p>
+                        <p id="325731" class="name" data-nombre="Adrián" data-expediente="325732" data-carrera="Ingeniería de Software" data-asistencias="3" data-faltas="0" data-ultima="01/01/2024" data-proxima="01/01/2024">
+                            Adrián García López npi
+                        </p>
                     </div>
                     <div class="appointments">
                         <p class="hour">12:00-</p>
@@ -75,6 +79,14 @@
                         <h3 id="martes">1</h3>
                     </div>
                     <div class="appointments">
+                        <p class="hour">10:00-</p>
+                        <p class="name">Nombre</p>
+                    </div>
+                    <div class="appointments">
+                        <p class="hour">11:00-</p>
+                        <p class="name">Nombre</p>
+                    </div>
+                    <div class="appointments">
                         <p class="hour">12:00-</p>
                         <p class="name">Nombre</p>
                     </div>
@@ -103,6 +115,14 @@
                     <div class="day">
                         <h3>Miércoles</h3>
                         <h3 id="miercoles">1</h3>
+                    </div>
+                    <div class="appointments">
+                        <p class="hour">10:00-</p>
+                        <p class="name">Nombre</p>
+                    </div>
+                    <div class="appointments">
+                        <p class="hour">11:00-</p>
+                        <p class="name">Nombre</p>
                     </div>
                     <div class="appointments">
                         <p class="hour">12:00-</p>
@@ -135,6 +155,14 @@
                         <h3 id="jueves">1</h3>
                     </div>
                     <div class="appointments">
+                        <p class="hour">10:00-</p>
+                        <p class="name">Nombre</p>
+                    </div>
+                    <div class="appointments">
+                        <p class="hour">11:00-</p>
+                        <p class="name">Nombre</p>
+                    </div>
+                    <div class="appointments">
                         <p class="hour">12:00-</p>
                         <p class="name">Nombre</p>
                     </div>
@@ -165,6 +193,14 @@
                         <h3 id="viernes">1</h3>
                     </div>
                     <div class="appointments">
+                        <p class="hour">10:00-</p>
+                        <p class="name">Nombre</p>
+                    </div>
+                    <div class="appointments">
+                        <p class="hour">11:00-</p>
+                        <p class="name">Nombre</p>
+                    </div>
+                    <div class="appointments">
                         <p class="hour">12:00-</p>
                         <p class="name">Nombre</p>
                     </div>
@@ -193,6 +229,14 @@
                     <div class="day">
                         <h3>Sábado</h3>
                         <h3 id="sabado">1</h3>
+                    </div>
+                    <div class="appointments">
+                        <p class="hour">10:00-</p>
+                        <p class="name">Nombre</p>
+                    </div>
+                    <div class="appointments">
+                        <p class="hour">11:00-</p>
+                        <p class="name">Nombre</p>
                     </div>
                     <div class="appointments">
                         <p class="hour">12:00-</p>
@@ -229,7 +273,22 @@
         </div>
     </footer>
 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Información del Alumno</h3>
+            <p><strong>Nombre:</strong> <span id="modal-nombre"></span></p>
+            <p><strong>Expediente:</strong> <span id="modal-expediente"></span></p>
+            <p><strong>Carrera:</strong> <span id="modal-carrera"></span></p>
+            <p><strong>Número de asistencias:</strong> <span id="modal-asistencias"></span></p>
+            <p><strong>Número de faltas:</strong> <span id="modal-faltas"></span></p>
+            <p><strong>Última cita:</strong> <span id="modal-ultima"></span></p>
+            <p><strong>Próxima cita:</strong> <span id="modal-proxima"></span></p>
+        </div>
+    </div>      
+
     <script>
+        // Dias de la semana
         const today = new Date();
         const mesesNombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
         const mesActual = mesesNombres[today.getMonth()];
@@ -250,6 +309,44 @@
         document.getElementById('jueves').textContent = getdiaDeLaSemana(4);
         document.getElementById('viernes').textContent = getdiaDeLaSemana(5);
         document.getElementById('sabado').textContent = getdiaDeLaSemana(6);
+
+        // Modal informacion
+        const modal = document.getElementById("myModal");
+        const spanClose = document.getElementsByClassName("close")[0];
+
+        function mostrarModal(event) {
+            const nombre = event.target.getAttribute("data-nombre");
+            const expediente = event.target.getAttribute("data-expediente");
+            const carrera = event.target.getAttribute("data-carrera");
+            const asistencias = event.target.getAttribute("data-asistencias");
+            const faltas = event.target.getAttribute("data-faltas");
+            const ultima = event.target.getAttribute("data-ultima");
+            const proxima = event.target.getAttribute("data-proxima");
+
+            document.getElementById("modal-nombre").textContent = nombre;
+            document.getElementById("modal-expediente").textContent = expediente;
+            document.getElementById("modal-carrera").textContent = carrera;
+            document.getElementById("modal-asistencias").textContent = asistencias;
+            document.getElementById("modal-faltas").textContent = faltas;
+            document.getElementById("modal-ultima").textContent = ultima;
+            document.getElementById("modal-proxima").textContent = proxima;
+
+            modal.style.display = "block";
+        }
+
+        document.querySelectorAll(".name").forEach(element => {
+            element.addEventListener("click", mostrarModal);
+        });
+
+        spanClose.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 
 </body>
