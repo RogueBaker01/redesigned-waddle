@@ -1,0 +1,120 @@
+/** -------------------- Global -------------------- */
+:root{
+    --Primary: #56aeff;
+    --Secundary: #d9fffd;
+    --White: #ffffff;
+    --Black: #838383;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: url(../img/npi.svg) no-repeat bottom/cover fixed;
+    
+}
+
+.container{
+    display: flex;
+    text-align: center;
+}
+
+/** -------------------- Header -------------------- */
+header{
+    background-color: var(--Primary);
+    padding: 10px 80px;
+    align-content: center;
+}
+
+.containerHeader{
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.logo{
+    color: var(--White);
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.logoBold{
+    font-weight: 700;
+}
+
+.containerHeaderNav{
+    width: 40%;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navegacion{
+    flex-direction: column;
+}
+
+.navegacionEnlace{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: var(--White);
+}
+
+header img{
+    width: 40px;
+}
+
+@media(min-width: 1160px){
+    header{
+        position: sticky;
+        top: 0;
+    }
+
+    .containerHeader{
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .navegacion{
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .containerHeaderNav{
+        flex-direction: row;
+        width: 50%;
+    }
+}
+
+/** -------------------- Main -------------------- */
+
+main{
+    padding: 0 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerMain{
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+}
+
+main h2{
+    font-size: 40px;
+    text-align: center;
+}
+
+/** -------------------- Footer -------------------- */
+.containerFooter{
+    padding: 20px 80px;
+    justify-content: center;
+}

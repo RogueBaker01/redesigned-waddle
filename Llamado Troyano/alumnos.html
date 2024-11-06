@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles_Globales.css">
+    <link rel="stylesheet" href="css/styles_Alumnos.css">
+    <link rel="stylesheet" href="css/styles_Modal.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container containerHeader">
+            <a href="index.html" class="logo"><h1>SuSalud<samp class="logoBold">Troyana</samp></h1></a>
+            <div class="container containerHeaderNav">
+                <nav class="container navegacion">
+                    <a href="alumnos.html" class="navegacionEnlace">Alumnos</a>
+                    <a href="calendario.html" class="navegacionEnlace">Calendario</a>
+                    <a href="#" class="navegacionEnlace">Agendar Cita</a>
+                </nav>
+                <img src="img/logo.jpg" alt="">
+            </div>
+        </div>
+    </header>
+
+    <main class="container mainAlumnos">
+        <div class="container containerMain">
+            <h2>Alumnos</h2>
+            
+            <input type="text" id="filtro" onkeyup="filtrarAlumnos()" placeholder="Buscar por expediente o nombre...">
+            
+            <div class="container containerAlumnos" id="myTable">
+                <div class="container alumno titulosAlumnos">
+                    <div class="container alumnoC2 alumnoExp">
+                        <p>Expediente</p>
+                    </div>
+                    <div class="container alumnoC2 alumnoNombre">
+                        <p>Nombre</p>
+                    </div>
+                    <div class="container alumnoC2 alumnoSecciones">
+                        <p>N. de Secciones</p>
+                    </div>
+                    <div class="container alumnoC2 alumnoFaltas">
+                        <p>N. de Faltas</p>
+                    </div>
+                    <div class="container alumnoC2 alumnoUSeccion">
+                        <p>Ultima Seccion</p>
+                    </div>
+                    <div class="container alumnoC2 alumnoPSeccion">
+                        <p>Proxima Seccion</p>
+                    </div>
+                </div>
+                <div class="container alumno alumnoid">
+                    <div class="container alumnoC alumnoExp" id="325732" class="name" data-nombre="Adrián García López" data-expediente="325732" data-carrera="Ingeniería de Software" data-asistencias="3" data-faltas="0" data-ultima="01/01/2024" data-proxima="01/01/2024">
+                        <p id="325732" class="name" data-nombre="Adrián García López" data-expediente="325732" data-carrera="Ingeniería de Software" data-asistencias="3" data-faltas="0" data-ultima="01/01/2024" data-proxima="01/01/2024">325732</p>
+                    </div>
+                    <div class="container alumnoC alumnoNombre" id="325732" class="name" data-nombre="Adrián García López" data-expediente="325732" data-carrera="Ingeniería de Software" data-asistencias="3" data-faltas="0" data-ultima="01/01/2024" data-proxima="01/01/2024">
+                        <p id="325732" class="name" data-nombre="Adrián García López" data-expediente="325732" data-carrera="Ingeniería de Software" data-asistencias="3" data-faltas="0" data-ultima="01/01/2024" data-proxima="01/01/2024">Adrián García López</p>
+                    </div>
+                    <div class="container alumnoC alumnoSecciones">
+                        <p>3</p>
+                    </div>
+                    <div class="container alumnoC alumnoFaltas">
+                        <p>0</p>
+                    </div>
+                    <div class="container alumnoC alumnoUSeccion">
+                        <p>01/01/2024</p>
+                    </div>
+                    <div class="container alumnoC alumnoPSeccion">
+                        <p>01/01/2024</p>
+                    </div>
+                </div>
+                <div class="container alumno">
+                    <div class="container alumnoC alumnoExp">
+                        <p>987654</p>
+                    </div>
+                    <div class="container alumnoC alumnoNombre">
+                        <p>Alfredo García López</p>
+                    </div>
+                    <div class="container alumnoC alumnoSecciones">
+                        <p>3</p>
+                    </div>
+                    <div class="container alumnoC alumnoFaltas">
+                        <p>0</p>
+                    </div>
+                    <div class="container alumnoC alumnoUSeccion">
+                        <p>01/01/2024</p>
+                    </div>
+                    <div class="container alumnoC alumnoPSeccion">
+                        <p>01/01/2024</p>
+                    </div>
+                </div>
+                <div class="container alumno">
+                    <div class="container alumnoC alumnoExp">
+                        <p>123456</p>
+                    </div>
+                    <div class="container alumnoC alumnoNombre">
+                        <p>Bernado García López</p>
+                    </div>
+                    <div class="container alumnoC alumnoSecciones">
+                        <p>3</p>
+                    </div>
+                    <div class="container alumnoC alumnoFaltas">
+                        <p>0</p>
+                    </div>
+                    <div class="container alumnoC alumnoUSeccion">
+                        <p>01/01/2024</p>
+                    </div>
+                    <div class="container alumnoC alumnoPSeccion">
+                        <p>01/01/2024</p>
+                    </div>
+                </div>
+                <div class="container alumno">
+                    <div class="container alumnoC alumnoExp">
+                        <p>666666</p>
+                    </div>
+                    <div class="container alumnoC alumnoNombre">
+                        <p>Gabo García López</p>
+                    </div>
+                    <div class="container alumnoC alumnoSecciones">
+                        <p>3</p>
+                    </div>
+                    <div class="container alumnoC alumnoFaltas">
+                        <p>0</p>
+                    </div>
+                    <div class="container alumnoC alumnoUSeccion">
+                        <p>01/01/2024</p>
+                    </div>
+                    <div class="container alumnoC alumnoPSeccion">
+                        <p>01/01/2024</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Información del Alumno</h3>
+            <p><strong>Nombre:</strong> <span id="modal-nombre"></span></p>
+            <p><strong>Expediente:</strong> <span id="modal-expediente"></span></p>
+            <p><strong>Carrera:</strong> <span id="modal-carrera"></span></p>
+            <p><strong>Número de asistencias:</strong> <span id="modal-asistencias"></span></p>
+            <p><strong>Número de faltas:</strong> <span id="modal-faltas"></span></p>
+            <p><strong>Última cita:</strong> <span id="modal-ultima"></span></p>
+            <p><strong>Próxima cita:</strong> <span id="modal-proxima"></span></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container containerFooter">
+            <h4>No se, algo</h4>
+        </div>
+    </footer>
+
+    <script src="js/app_Alumnos.js"></script>
+    <script src="js/app_Modal.js"></script>
+</body>
+</html>

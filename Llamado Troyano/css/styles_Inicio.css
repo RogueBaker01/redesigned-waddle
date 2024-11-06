@@ -1,0 +1,45 @@
+/** -------------------- Inicio -------------------- */
+
+body{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.containerInicioSesion{
+    background-color: var(--White);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.botonUsuario, .formularioInicio {
+    margin: 15px 0;
+}
+
+.botonUsuario button, .-formularioInicio button {
+    background-color: var(--Primary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.formularioInicio {
+    display: none;
+}
+
+.formularioInicio input[type="text"], .formularioInicio input[type="password"] {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

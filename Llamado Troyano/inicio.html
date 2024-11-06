@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles_Globales.css">
+    <link rel="stylesheet" href="css/styles_Inicio.css">
+    <title>Document</title>
+</head>
+<body class="container">
+    <main class="containerInicioSesion">
+        <h2>Inicio de Sesión</h2>
+        <div class="botonUsuario">
+            <button onclick="showLoginForm('maestro')">Maestro</button>
+            <button onclick="showLoginForm('alumno')">Alumno</button>
+        </div>
+        <div class="formularioInicio" id="maestro-form">
+            <h3>Inicio de sesión - Maestro</h3>
+            <input type="text" placeholder="Usuario" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button>Iniciar Sesión</button>
+        </div>
+        <div class="formularioInicio" id="alumno-form">
+            <h3>Inicio de sesión - Alumno</h3>
+            <input type="text" placeholder="Usuario" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button>Iniciar Sesión</button>
+        </div>
+    </main>
+
+    <script src="js/app_Inicio.js"></script>
+</body>
+</html>
